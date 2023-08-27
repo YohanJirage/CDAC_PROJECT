@@ -10,7 +10,8 @@ public class VendorProductPOJO {
 	private double price;
 	private int offer_percentage;
 	private String offer_valid_date;
-	private int vid;//consider it as user id
+	private int vid; //consider it as user id
+
 	
 	public VendorProductPOJO() {
 		super();
@@ -29,6 +30,7 @@ public class VendorProductPOJO {
 		this.offer_valid_date = offer_valid_date;
 	}
 
+	
 	
 	
 	public VendorProductPOJO(int category_id, int product_id, int vpid, int quantity, double price,

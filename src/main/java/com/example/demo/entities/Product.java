@@ -1,6 +1,7 @@
 package com.example.demo.entities;
 
 import java.sql.Blob;
+import java.util.Arrays;
 import java.util.List;
 
 import javax.persistence.*;
@@ -129,6 +130,9 @@ public class Product {
 		this.picture = picture;
 	}
 
+	
+
+	
 	
     
      

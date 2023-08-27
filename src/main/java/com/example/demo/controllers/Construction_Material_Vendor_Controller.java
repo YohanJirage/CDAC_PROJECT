@@ -4,18 +4,19 @@ package com.example.demo.controllers;
 
 import java.sql.Date;
 import java.time.LocalDate;
-
-
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.entities.Address;
 import com.example.demo.entities.Construction_Material_Vendor;
+import com.example.demo.entities.Individual_Customer;
 import com.example.demo.entities.Membership_payment;
 import com.example.demo.entities.Plans;
 import com.example.demo.entities.User;
@@ -70,6 +71,22 @@ public class Construction_Material_Vendor_Controller {
 	   {
 	    	return vendorService.getVendEmails();
 	   }
+	   
+	   @GetMapping("/getVendors")
+	   public List<Construction_Material_Vendor> getVendors()
+	   {
+		   return vendorService.getAllVendors();
+	   }
+	   
+	   @GetMapping("/getVendorByUid")
+		 public Construction_Material_Vendor getVendorById(@RequestParam int uid )
+		 {
+		   
+			 return vendorService.getVendor(uid);
+		 }
+		 
+	   
+	   
 	    
 	
 

@@ -1,5 +1,7 @@
 package com.example.demo.pojo;
 
+import java.sql.Date;
+
 public class OrderPlacePOJO {
 	
 	private int user_id;
@@ -10,6 +12,9 @@ public class OrderPlacePOJO {
 	private double initial_Payment_Amount;
 	private String initial_Payment_Mode;
 	private String initial_Payment_Transid;
+	private int active_status;
+	private Date initial_Payment_Date;
+	private Date order_Date;
 	public OrderPlacePOJO() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -25,6 +30,24 @@ public class OrderPlacePOJO {
 		this.initial_Payment_Amount = initial_Payment_Amount;
 		this.initial_Payment_Mode = initial_Payment_Mode;
 		this.initial_Payment_Transid = initial_Payment_Transid;
+	}
+	
+	
+	public OrderPlacePOJO(int user_id, double total_price, int city, int area, String addline,
+			double initial_Payment_Amount, String initial_Payment_Mode, String initial_Payment_Transid,
+			int active_status,Date initial_Payment_Date,Date order_Date ) {
+		super();
+		this.user_id = user_id;
+		this.total_price = total_price;
+		this.city = city;
+		this.area = area;
+		this.addline = addline;
+		this.initial_Payment_Amount = initial_Payment_Amount;
+		this.initial_Payment_Mode = initial_Payment_Mode;
+		this.initial_Payment_Transid = initial_Payment_Transid;
+		this.active_status = active_status;
+		this.initial_Payment_Date=initial_Payment_Date;
+		this.order_Date=order_Date;
 	}
 	public int getUser_id() {
 		return user_id;
@@ -74,5 +97,24 @@ public class OrderPlacePOJO {
 	public void setInitial_Payment_Transid(String initial_Payment_Transid) {
 		this.initial_Payment_Transid = initial_Payment_Transid;
 	}
+	public int getActive_status() {
+		return active_status;
+	}
+	public void setActive_status(int active_status) {
+		this.active_status = active_status;
+	}
+	public Date getInitial_Payment_Date() {
+		return initial_Payment_Date;
+	}
+	public void setInitial_Payment_Date(Date initial_Payment_Date) {
+		this.initial_Payment_Date = initial_Payment_Date;
+	}
+	public Date getOrder_Date() {
+		return order_Date;
+	}
+	public void setOrder_Date(Date order_Date) {
+		this.order_Date = order_Date;
+	}
+	
 	
 }

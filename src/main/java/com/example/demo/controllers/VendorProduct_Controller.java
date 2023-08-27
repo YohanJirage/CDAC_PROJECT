@@ -36,6 +36,8 @@ public class VendorProduct_Controller {
 	Construction_Material_Vendor_Service cvservice;
 	@Autowired
 	UserService uservice;
+	
+
 
 	
 	@GetMapping("/getVendorProductsVendors")
@@ -75,7 +77,9 @@ public class VendorProduct_Controller {
 	public int updateVendorProduct(@RequestBody VendorProductPOJO v )
 	{
 		Product p = pservice.getProductByPid(v.getProduct_id());
-		Construction_Material_Vendor cv = cvservice.getVendorById(v.getVpid());
+//		System.out.println(p);
+		Vendor_Product vp = vpservice.getVendor_ProductById(v.getVpid());
+		Construction_Material_Vendor cv = cvservice.getVendorById(vp.getVendor().getId());
 		LocalDate ld=LocalDate.parse(v.getOffer_valid_date());
 		Date d = java.sql.Date.valueOf(ld);
 		return vpservice.updateVendorProduct(v.getQuantity(), v.getPrice(), v.getOffer_percentage(),d,p,cv,v.getVpid());
@@ -89,7 +93,8 @@ public class VendorProduct_Controller {
 	@GetMapping("/getVendorProduct")
 	public Vendor_Product getVendorProduct(@RequestParam int vpid)
 	{
-		System.out.println("new Call");
+	
 		return vpservice.getVendor_ProductById(vpid);
 	}
+	
 }

@@ -13,5 +13,8 @@ public interface Order_Item_Repo extends JpaRepository<Order_Item, Integer> {
 	@Query(value="select * from order_item where order_id in (select id from orders where user_id= :uid)",nativeQuery = true)
 	public List<Order_Item> getorderitembyuid(int uid);
 	
+	
+    @Query(value="select oi.id,oi.quantity,oi.order_id, oi.vendor_product_id from order_item oi , vendor_product vp, orders o where oi.vendor_product_id=vp.id and oi.order_id=o.id and vp.vendor_id=:vid and o.status_id=1",nativeQuery = true)
+    public List<Order_Item> getOrderItemsOfVendor(int vid);
 
 }

@@ -10,4 +10,7 @@ public interface Construction_Material_Vendor_Repo extends JpaRepository<Constru
 		
 	@Query("select v.email from Construction_Material_Vendor v")
 	 public String[] getVendorEmails();
+	
+	@Query(value = "select * from construction_material_vendors where uid=:uid",nativeQuery = true)
+	public Construction_Material_Vendor getVendorById(int uid);
 }

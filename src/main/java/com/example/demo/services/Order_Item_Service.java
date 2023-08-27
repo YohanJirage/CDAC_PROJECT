@@ -39,4 +39,8 @@ public class Order_Item_Service {
      orepo.save(o);
     }
 
+    public List<Order_Item> getOrderItemsOfVendors(int vpid)
+    {
+    	return orepo.getOrderItemsOfVendor(vpid);
+    }
 }

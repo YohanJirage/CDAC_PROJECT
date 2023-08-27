@@ -127,6 +127,35 @@ public class Order {
 		this.initialPaymentTransactionId = initialPaymentTransactionId;
 	}
 
+	
+	public Order(User user, Double totalPrice, Address address, Double initialPaymentAmount, String initialPaymentMode,
+			 String initialPaymentTransactionId, Order_Status orderStatus) {
+		super();
+		this.user = user;
+		this.totalPrice = totalPrice;
+		this.address = address;
+		this.initialPaymentAmount = initialPaymentAmount;
+		this.initialPaymentMode = initialPaymentMode;
+		this.initialPaymentTransactionId = initialPaymentTransactionId;
+		this.orderStatus = orderStatus;
+	}
+	
+
+	public Order(Date orderDate, User user, Double totalPrice, Address address, Double initialPaymentAmount,
+			String initialPaymentMode, Date initialPaymentDate, String initialPaymentTransactionId,
+			Order_Status orderStatus) {
+		super();
+		this.orderDate = orderDate;
+		this.user = user;
+		this.totalPrice = totalPrice;
+		this.address = address;
+		this.initialPaymentAmount = initialPaymentAmount;
+		this.initialPaymentMode = initialPaymentMode;
+		this.initialPaymentDate = initialPaymentDate;
+		this.initialPaymentTransactionId = initialPaymentTransactionId;
+		this.orderStatus = orderStatus;
+	}
+
 	public int getId() {
 		return id;
 	}

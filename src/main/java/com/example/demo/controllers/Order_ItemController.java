@@ -23,6 +23,10 @@ public class Order_ItemController {
 		return oiService.getorderitembyuid(uid);
 	}
 	
-	
+	@GetMapping("/getVendorOrderItems")
+	public List<Order_Item> getOrderItemOfVendor(@RequestParam int vid)
+	{
+		return oiService.getOrderItemsOfVendors(vid);
+	}
 
 }

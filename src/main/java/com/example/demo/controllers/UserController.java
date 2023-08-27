@@ -38,5 +38,16 @@ public class UserController {
     {
     	return uservice.getUserById(id);
     }
+    @GetMapping("/getUserByUsername")
+    public User getUserByUsername(@RequestParam String username)
+    {
+    	return uservice.getUserByUsername(username);
+    }
     
+    @GetMapping("/changePassword")
+    public int changePass(@RequestParam String username,@RequestParam String password )
+    {
+    	User u = uservice.getUserByUsername(username); 
+    	return uservice.changePass(username, password);
+    }
 }

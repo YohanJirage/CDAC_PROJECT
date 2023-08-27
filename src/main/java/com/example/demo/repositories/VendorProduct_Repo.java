@@ -32,6 +32,8 @@ public interface VendorProduct_Repo extends JpaRepository<Vendor_Product, Intege
 	@Modifying
 	@Query("delete from Vendor_Product u where id=:vid")
 	public int deleteVendorProduct(int vid);
+	
+
 
 	
 

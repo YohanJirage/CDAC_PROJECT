@@ -18,6 +18,9 @@ public class Category_Service {
 		return crepo.findAll();
 	}
 	
-	
 
+	public Category saveCategory(Category c)
+	{
+		return crepo.save(c);
+	}
 }

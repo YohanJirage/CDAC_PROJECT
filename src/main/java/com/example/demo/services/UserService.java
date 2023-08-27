@@ -2,13 +2,17 @@ package com.example.demo.services;
 
 import java.util.Optional;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.entities.Question;
 import com.example.demo.entities.User;
 import com.example.demo.repositories.UserRepository;
+
 @Service
+@Transactional
 public class UserService {
     @Autowired
 	UserRepository urepo;
@@ -44,5 +48,13 @@ public class UserService {
 		 }
 		 return r;
 	}
+	public User getUserByUsername(String uname)
+	{
+		return urepo.getUserByUsername(uname);
+	}
 	
+	public int changePass(String uname,String pass)
+	{
+		return urepo.changePass(uname, pass);
+	}
 }

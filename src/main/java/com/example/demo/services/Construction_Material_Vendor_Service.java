@@ -1,5 +1,6 @@
 package com.example.demo.services;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +30,7 @@ public class Construction_Material_Vendor_Service {
 		Construction_Material_Vendor p = null;
 		try
 		{
+			if(pr!=null)
 			p = pr.get();
 		}
 		catch (Exception e) {
@@ -36,7 +38,15 @@ public class Construction_Material_Vendor_Service {
 		}
 		return p;
 	}
+	public List<Construction_Material_Vendor> getAllVendors()
+	{
+		return vendorRepo.findAll();
+	}
 	
+	public Construction_Material_Vendor getVendor(int uid)
+	{
+		return vendorRepo.getVendorById(uid);
+	}
 	
 
 }
