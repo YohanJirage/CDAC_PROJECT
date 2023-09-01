@@ -1,0 +1,147 @@
+Styling for the registration form
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.bg-dark {
+  background-color: #343a40;
+  color: #fff;
+}
+
+.container {
+  max-width: 500px;
+  margin: auto;
+  padding: 30px;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+form {
+  display: grid;
+  gap: 20px;
+}
+
+.label-input-block {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-weight: bold;
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #f5f5f5;
+  color: #333;
+  transition: border-color 0.3s ease-in-out;
+}
+
+input[type="password"],
+select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #f5f5f5;
+  color: #333;
+  transition: border-color 0.3s ease-in-out;
+}
+
+input[type="text"]:focus,
+select:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.15);
+}
+
+select {
+  appearance: none;
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='currentColor' viewBox='0 0 12 12'><path d='M2 3l4 4 4-4'/></svg>")
+    no-repeat right center;
+  background-size: 12px;
+}
+
+.btn-primary,
+.btn-secondary {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.btn-secondary {
+  background-color: #ccc;
+  color: #333;
+}
+
+.btn-primary:hover,
+.btn-secondary:hover {
+  background-color: #0056b3;
+}
+
+/* Error message */
+.error-message {
+  color: #d9534f;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+/* Additional styling */
+.container h1 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 20px;
+    max-width: 100%;
+    border: none;
+    border-radius: 0;
+  }
+
+  form {
+    grid-template-columns: 1fr;
+  }
+
+  input[type="text"],
+  select {
+    padding: 10px;
+    font-size: 25px;
+    size: 20px;
+  }
+
+  input[type="password"],
+  select {
+    padding: 10px;
+    font-size: 25px;
+    size: 30px;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    padding: 10px 16px;
+    font-size: 12px;
+  }
+}
